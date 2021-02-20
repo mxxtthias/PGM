@@ -69,7 +69,7 @@ public class ChatDispatcher implements Listener {
   public static final TextComponent ADMIN_CHAT_PREFIX =
       text()
           .append(text("[", NamedTextColor.WHITE))
-          .append(text("A", NamedTextColor.GOLD))
+          .append(text("A", NamedTextColor.AQUA))
           .append(text("] ", NamedTextColor.WHITE))
           .build();
 
@@ -80,8 +80,8 @@ public class ChatDispatcher implements Listener {
   private static final String DM_SYMBOL = "@";
   private static final String ADMIN_CHAT_SYMBOL = "$";
 
-  private static final String GLOBAL_FORMAT = "<%s>: %s";
-  private static final String PREFIX_FORMAT = "%s: %s";
+  private static final String GLOBAL_FORMAT = "%s » %s";
+  private static final String PREFIX_FORMAT = "%s » %s";
   private static final String AC_FORMAT =
       TextTranslations.translateLegacy(ADMIN_CHAT_PREFIX, null) + PREFIX_FORMAT;
 
@@ -490,15 +490,14 @@ public class ChatDispatcher implements Listener {
     Component msg = text(message != null ? message : "");
     if (prefix == null)
       return text()
-          .append(text("<", NamedTextColor.WHITE))
           .append(player.getName(NameStyle.VERBOSE))
-          .append(text(">: ", NamedTextColor.WHITE))
+          .append(text(" » ", NamedTextColor.WHITE))
           .append(msg)
           .build();
     return text()
         .append(prefix)
         .append(player.getName(NameStyle.VERBOSE))
-        .append(text(": ", NamedTextColor.WHITE))
+        .append(text(" » ", NamedTextColor.WHITE))
         .append(msg)
         .build();
   }

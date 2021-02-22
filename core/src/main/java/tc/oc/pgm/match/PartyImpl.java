@@ -100,7 +100,7 @@ public class PartyImpl implements Party, Audience {
     if (name.equalsIgnoreCase("Observers")) {
       this.prefix = text("(Obs) ", color);
     } else {
-      this.prefix = text("(" + name + ") ", color);
+      this.prefix = text("(Team) ", color);
     }
     this.plural = name.endsWith("s");
 
